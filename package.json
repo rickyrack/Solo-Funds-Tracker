@@ -1,0 +1,19 @@
+{
+  "name": "project-solofundstracker",
+  "version": "1.0.0",
+  "description": "Tracks solo funds account and updates a tracking website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickyrack/Solo-Funds-Tracker.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rickyrack/Solo-Funds-Tracker/issues"
+  },
+  "homepage": "https://github.com/rickyrack/Solo-Funds-Tracker#readme"
+}
