@@ -1,0 +1,12 @@
+@use "../../utils/global.scss" as *;
+
+.homePage {
+main {
+    display: flex;
+    justify-content: center;
+
+    margin: 1.5rem 0 0 0;
+
+    color: $primaryColor;
+}
+}

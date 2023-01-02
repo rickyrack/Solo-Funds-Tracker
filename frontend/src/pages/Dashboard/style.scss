@@ -1,0 +1,34 @@
+@use "../../utils/global.scss" as *;
+
+.dashboardPage {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 1.5rem 0 0 0;
+}
+h1 {
+    font-size: $headingSize;
+    color: $primaryColor;
+}
+.middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 46rem;
+
+    margin: 3rem 0 0 0;
+}
+.loanList {
+    background-color: red;
+    width: 20rem;
+    height: 40rem;
+}
+.addLoan {
+    background-color: blue;
+    width: 20rem;
+    height: 40rem;
+}
+}
