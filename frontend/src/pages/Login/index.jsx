@@ -17,12 +17,12 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    toast("Testing");
     if(formData.password === formData.password2) {
       console.log(formData);
+
     }
     else {
-      console.log()
+      toast("Passwords must match!")
     }
     console.log(formData);
   };
@@ -32,34 +32,28 @@ function Login() {
       <main>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-          <label>
-            Email:
             <input
               type="email"
+              placeholder="Enter your email"
               name="email"
               value={formData.email}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Password:
             <input
               type="password"
+              placeholder="Enter your password"
               name="password"
               value={formData.password}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Confirm Password:
             <input
               type="password"
+              placeholder="Confirm your password"
               name="password2"
               value={formData.password2}
               onChange={handleChange}
             />
-          </label>
-          <input type="submit" />
+          <input className="submit" type="submit" />
         </form>
       </main>
     </div>

@@ -3,7 +3,8 @@
 .loginPage {
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     
     margin: 1.5rem 0 0 0;
         
@@ -11,5 +12,29 @@ main {
 h1 {
     font-size: $headingSize;
     color: $primaryColor;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+}
+input {
+    height: 2rem;
+    width: 24rem;
+
+    border-radius: .6rem;
+
+    background-color: rgb(235, 235, 235);
+
+    font-size: 1rem;
+
+    padding: .4rem;
+    border: 0;
+}
+.submit {
+    width: 24.8rem;
+    height: 2.6rem;
 }
 }
