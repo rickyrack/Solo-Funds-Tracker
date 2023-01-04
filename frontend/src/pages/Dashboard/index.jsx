@@ -2,7 +2,7 @@ import "./style.scss";
 
 function Dashboard() {
   return (
-    <container className="dashboardPage">
+    <div className="dashboardPage">
       <main>
         <h1>Dashboard</h1>
         <section className="middle">
@@ -10,7 +10,7 @@ function Dashboard() {
           <section className="addLoan"></section>
         </section>
       </main>
-    </container>
+    </div>
   );
 }
 

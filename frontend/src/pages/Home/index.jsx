@@ -2,11 +2,11 @@ import "./style.scss";
 
 function Home() {
   return (
-    <container className="homePage">
+    <div className="homePage">
       <main>
         <h1>Home</h1>
       </main>
-    </container>
+    </div>
   );
 }
 

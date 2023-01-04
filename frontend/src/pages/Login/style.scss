@@ -1,15 +1,15 @@
 @use "../../utils/global.scss" as *;
 
-.homePage {
+.loginPage {
 main {
     display: flex;
     justify-content: center;
-
-    margin: 1.5rem 0 0 0;
     
+    margin: 1.5rem 0 0 0;
+        
 }
 h1 {
-    color: $primaryColor;
     font-size: $headingSize;
+    color: $primaryColor;
 }
 }
