@@ -1,16 +1,16 @@
 import { auth } from "../../firebase";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import "./style.scss";
 
-function Login() {
+function Register() {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
+    password2: ""
   });
 
   const handleChange = (event) => {
@@ -21,14 +21,20 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(formData.password === formData.password2) {
+      console.log(formData);
+
+    }
+    else {
+      toast("Passwords must match!")
+    }
     console.log(formData);
   };
 
   return (
-    <div className="loginPage">
+    <div className="registerPage">
       <main>
-        <h1>Login</h1>
-        <p className="noAccount">Don't have an account? <Link to="/register">Sign Up</Link></p>
+        <h1>Register</h1>
         <form onSubmit={handleSubmit}>
             <input
               type="email"
@@ -44,6 +50,13 @@ function Login() {
               value={formData.password}
               onChange={handleChange}
             />
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              name="password2"
+              value={formData.password2}
+              onChange={handleChange}
+            />
           <input className="submit" type="submit" />
         </form>
       </main>
@@ -51,4 +64,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

@@ -1,6 +1,6 @@
 @use "../../utils/global.scss" as *;
 
-.loginPage {
+.registerPage {
 main {
     display: flex;
     flex-direction: column;
@@ -13,14 +13,6 @@ main {
 h1 {
     font-size: $headingSize;
     color: $primaryColor;
-
-    margin-bottom: .6rem;
-}
-
-.noAccount {
-    padding-bottom: .6rem;
-    color: white;
-    font-size: 1.2rem;
 }
 
 form {
