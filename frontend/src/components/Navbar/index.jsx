@@ -1,17 +1,29 @@
 import { Link } from "react-router-dom";
+import {
+  AiOutlineHome,
+  AiOutlineDashboard,
+  AiOutlineLogin,
+} from "react-icons/ai";
 import "./style.scss";
 
 function Navbar() {
   return (
     <header>
-    <nav></nav>
-      <nav className="middle">
-        <Link to="/" className="link">Home</Link>
-        <Link to="/dashboard" className="link">Dashboard</Link>
-        <Link to="/login" className="link">Login</Link>
-        <Link to="/register" className="link">Register</Link>
+      <nav className="title">
+        Solo-Tracker
       </nav>
-    <nav></nav>
+      <nav className="links">
+        <Link to="/" className="link">
+          <AiOutlineHome />
+        </Link>
+        <Link to="/dashboard" className="link">
+          <AiOutlineDashboard />
+        </Link>
+        <Link to="/login" className="link">
+          <AiOutlineLogin />
+        </Link>
+      </nav>
+      <nav></nav>
     </header>
   );
 }
