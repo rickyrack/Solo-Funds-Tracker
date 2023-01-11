@@ -1,5 +1,6 @@
-import { auth } from "../../firebase";
 import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,6 +13,10 @@ function Register() {
     password: "",
     password2: ""
   });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const { createUser } = useAuth();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -19,11 +24,17 @@ function Register() {
     setFormData(data => ({...data, [name]: value}))
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setError('');
     if(formData.password === formData.password2) {
-      console.log(formData);
-
+      try {
+        await createUser(formData.email, formData.password);
+        navigate('/dashboard');
+      } catch (e) {
+        setError(e.message);
+        console.log(error);
+      }
     }
     else {
       toast("Passwords must match!")

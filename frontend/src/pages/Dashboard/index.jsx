@@ -1,3 +1,4 @@
+import { useAuth } from "../../context/AuthContext";
 import "./style.scss";
 
 function Dashboard() {
