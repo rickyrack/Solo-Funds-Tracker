@@ -16,7 +16,9 @@ function Register() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const { createUser } = useAuth();
+  const { user, createUser } = useAuth();
+
+  //if(user) navigate('/dashboard');
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -39,7 +41,6 @@ function Register() {
     else {
       toast("Passwords must match!")
     }
-    console.log(formData);
   };
 
   return (

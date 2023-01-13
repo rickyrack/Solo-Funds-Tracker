@@ -16,6 +16,10 @@ export const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+
   const logout = () => {
     return signOut(auth);
   }
@@ -32,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ createUser, user, logout }}>
+    <AuthContext.Provider value={{ createUser, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
