@@ -19,6 +19,11 @@ function Navbar() {
   ? <Logout className="link"/>
   : <Login className="link"/>
 
+  let showDash;
+  if(user) {
+    showDash = <Link to="/dashboard" className="link"><AiOutlineDashboard /></Link>;
+  }
+
   return (
     <header>
       <nav className="title">
@@ -28,9 +33,7 @@ function Navbar() {
         <Link to="/" className="link">
           <AiOutlineHome />
         </Link>
-        <Link to="/dashboard" className="link">
-          <AiOutlineDashboard />
-        </Link>
+        {showDash}
         {statusSymbol}
       </nav>
       <nav></nav>

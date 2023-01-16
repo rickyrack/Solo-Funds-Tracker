@@ -18,8 +18,6 @@ function Register() {
 
   const { user, createUser } = useAuth();
 
-  //if(user) navigate('/dashboard');
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;

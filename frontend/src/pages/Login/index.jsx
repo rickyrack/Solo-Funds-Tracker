@@ -17,8 +17,6 @@ function Login() {
 
   const { user, login } = useAuth();
 
-  //if(user) navigate('/dashboard');
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;

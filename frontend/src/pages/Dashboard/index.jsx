@@ -1,7 +1,16 @@
+import { useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import "./style.scss";
 
 function Dashboard() {
+  useEffect(() => {
+    first
+  
+    return () => {
+      second
+    }
+  }, [third])
+  
   return (
     <div className="dashboardPage">
       <main>
