@@ -1,4 +1,4 @@
-@use "../../../utils/global.scss" as *;
+@use "../../../../utils/global.scss" as *;
 
 .DashNavComp {
     position: absolute;
@@ -8,7 +8,7 @@
     flex-direction: column;
 
     width: 15.8rem;
-    height: 100%;
+    height: calc(100% - 3.15rem);
 
     border-right: .15rem solid black;
     background-color: rgb(51, 51, 51);
@@ -68,6 +68,12 @@ main button {
 }
 
 main button:hover {
-    background-color: #111111;;
+    background-color: #111111;
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: .5rem;
 }
 }

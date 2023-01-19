@@ -11,10 +11,7 @@ import "./style.scss";
 
 function Navbar() {
   const { user } = useAuth();
-  if(user) {
-    console.log(user);
-    console.log('user true');
-  }
+
   const statusSymbol = user
   ? <Logout className="link"/>
   : <Login className="link"/>

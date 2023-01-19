@@ -10,7 +10,7 @@ import "./style.scss";
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
+    password: ""
   });
   const [error, setError] = useState('');
   const navigate = useNavigate();

@@ -17,6 +17,7 @@ function DashNav() {
         <button>General</button>
         <button>Loans</button>
       </main>
+      <footer>Email: profile@gmail.com</footer>
     </nav>
   );
 }
