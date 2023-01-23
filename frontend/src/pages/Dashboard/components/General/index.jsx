@@ -5,6 +5,11 @@ import { useEffect } from "react";
 import { getUser } from "../../../../api/userService";
 
 function General() {
+  const [userData, setUserData] = useState({
+    displayName: '...',
+    currentAmt: '...',
+    totalAmt: '...'
+  });
   const [currentAmt, setCurrentAmt] = useState('...');
 
   const { user } = useAuth();
@@ -13,7 +18,7 @@ function General() {
       getUser(user.email)
         .then((res) => {
           console.log(res);
-          setCurrentAmt(res.data[0].displayName)
+          setCurrentAmt(res.data.displayName)
         })
         .catch((error) => console.log(error));
     }, [user])

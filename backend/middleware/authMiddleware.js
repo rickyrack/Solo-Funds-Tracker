@@ -1,7 +1,36 @@
-const asyncHandler = require('express-async-handler');
+const asyncHandler = require("express-async-handler");
+const { firebase } = require("../services/firebase/firebase");
 
 const protect = asyncHandler(async (req, res, next) => {
-    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
-
+  let authToken = req.headers.authorization;
+  console.log(req.headers);
+  console.log(authToken);
+  if (authToken) {
+    authToken = authToken.split(" ")[1];
+    try {
+      firebase
+        .auth()
+        .verifyIdToken(authToken)
+        .then((user) => {
+          req.user = user;
+          next();
+        });
+    } catch (error) {
+      res.status(403).send("Unauthorized");
     }
+  } else {
+    res.status(403).send("Unauthorized");
+    console.log("testing");
+  }
+
+  /*if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
+  ) {
+    try {
+      token = req.headers.authorization[1];
+    } catch (error) {}
+  }*/
 });
+
+module.exports = { protect };

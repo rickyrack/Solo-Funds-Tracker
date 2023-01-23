@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -31,12 +31,9 @@ function Register() {
     setError("");
     if (formData.password === formData.password2) {
       try {
-        console.log("WHAT");
         await createUser(formData.email, formData.password);
         addUser(formData)
-          .then((res) => {
-            console.log("axios response:");
-            console.log(res);
+          .then(() => {
             navigate("/dashboard");
           })
         } catch(e){

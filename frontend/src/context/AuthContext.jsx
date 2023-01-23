@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    //cleanup function to be returned as function
+    // cleanup function to be returned as function
     // [] arg runs it only once
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

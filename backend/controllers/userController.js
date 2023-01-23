@@ -25,12 +25,13 @@ const createUser = asyncHandler(async (req, res) => {
 // @route   GET /api/users
 // @access  Private
 const getUser = asyncHandler(async (req, res) => {
-    console.log(req.query);
-    if(!req.query.email) {
+    console.log(req.user.email);
+    // USE USER FROM AUTH INSTEAD OF EMAIL
+    if(!req.user.email) {
         throw new Error('Missing Email Validator');
     }
 
-    const user = await User.find({ email: req.query.email })
+    const user = await User.findOne({ email: req.user.email })
     console.log(user);
     res.status(200).json(user);
 })
