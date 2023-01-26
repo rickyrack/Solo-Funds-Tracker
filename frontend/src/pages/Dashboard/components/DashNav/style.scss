@@ -77,3 +77,56 @@ footer {
     bottom: .5rem;
 }
 }
+
+.DashNavCompClosed {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    width: 15.8rem;
+    height: 3.1rem;
+
+    border-right: .15rem solid black;
+    background-color: rgb(51, 51, 51);
+
+header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        width: 100%;
+        border-bottom: .15rem solid black;
+}
+    
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
+}
+    
+.hamburger {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    
+    font-size: 1.8rem;
+}
+
+h2 {
+    margin: .8rem 0 .8rem 0;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    position: inherit;
+    flex: 3;
+    
+    font-size: 1.2rem;
+}
+}

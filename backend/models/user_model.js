@@ -10,9 +10,8 @@ const userSchema = mongoose.Schema({
         required: true
     },
     firebaseUID: {
-        type: Number,
+        type: String,
         required: true,
-        default: 0000000
     },
     invest: {
         total: {

@@ -10,14 +10,14 @@ import Logout from "./Logout";
 import "./style.scss";
 
 function Navbar() {
-  const { user } = useAuth();
+  const { authUser } = useAuth();
 
-  const statusSymbol = user
+  const statusSymbol = authUser
   ? <Logout className="link"/>
   : <Login className="link"/>
 
   let showDash;
-  if(user) {
+  if(authUser) {
     showDash = <Link to="/dashboard" className="link"><AiOutlineDashboard /></Link>;
   }
 

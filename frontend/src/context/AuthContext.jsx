@@ -10,9 +10,9 @@ import { auth } from "../firebase";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [authUser, setAuthUser] = useState({});
 
-  const createUser = (email, password) => {
+  const createUser = async (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -28,15 +28,16 @@ export const AuthProvider = ({ children }) => {
     // cleanup function to be returned as function
     // [] arg runs it only once
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      setAuthUser(currentUser);
     });
+    console.log(authUser);
     return () => {
       unsubscribe();
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ createUser, user, login, logout }}>
+    <AuthContext.Provider value={{ createUser, authUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

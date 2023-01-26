@@ -31,8 +31,8 @@ function Register() {
     setError("");
     if (formData.password === formData.password2) {
       try {
-        await createUser(formData.email, formData.password);
-        addUser(formData)
+        const firebaseUser = await createUser(formData.email, formData.password); // firebase
+        addUser(formData, firebaseUser.user.uid) // mongoDB
           .then(() => {
             navigate("/dashboard");
           })

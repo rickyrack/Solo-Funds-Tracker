@@ -3,8 +3,9 @@ const { firebase } = require("../services/firebase/firebase");
 
 const protect = asyncHandler(async (req, res, next) => {
   let authToken = req.headers.authorization;
-  console.log(req.headers);
-  console.log(authToken);
+  console.log('auth header');
+  console.log(req.headers.authorization);
+
   if (authToken) {
     authToken = authToken.split(" ")[1];
     try {
@@ -12,7 +13,7 @@ const protect = asyncHandler(async (req, res, next) => {
         .auth()
         .verifyIdToken(authToken)
         .then((user) => {
-          req.user = user;
+          req.user = user;  //firebase user
           next();
         });
     } catch (error) {
