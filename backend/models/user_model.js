@@ -16,11 +16,11 @@ const userSchema = mongoose.Schema({
     invest: {
         total: {
             type: Number,
-            default: 0
+            default: 0.00
         },
         current: {
             type: Number,
-            default: 0
+            default: 0.00
         }
     }
 },

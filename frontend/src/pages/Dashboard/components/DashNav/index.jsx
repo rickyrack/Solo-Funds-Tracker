@@ -3,12 +3,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import "./style.scss";
 
-function DashNav() {
+function DashNav(props) {
+  const { email } = props.userData;
+
   const [toggleNav, setToggleNav] = useState(true);
   const handleNavToggle = () => {
     setToggleNav((prev) => !prev);
     console.log(toggleNav);
   };
+
+  const handleChangePage = (newPage) => {
+    props.changePage(newPage);
+  }
 
   const showNav = () => {
     if (toggleNav) {
@@ -23,10 +29,10 @@ function DashNav() {
             </button>
           </header>
           <main style={{ paddingTop: "0" }}>
-            <button>General</button>
-            <button>Loans</button>
+            <button onClick={() => handleChangePage("General")}>General</button>
+            <button onClick={() => handleChangePage("Loans")}>Loans</button>
           </main>
-          <footer>Email: profile@gmail.com</footer>
+          <footer>Email: {email}</footer>
         </nav>
       );
     } else {

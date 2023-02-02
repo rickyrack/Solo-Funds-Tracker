@@ -1,3 +1,4 @@
+import Card from "./Card";
 import "./style.scss";
 
 function General(props) {
@@ -5,8 +6,8 @@ function General(props) {
   return (
     <div className="generalPage">
       <h2>Hello, {displayName}</h2>
-      <p>Currently Invested: {invest.current}</p>
-      <p>All time Invested: {invest.total}</p>
+      <Card title="Currently Invested" value={invest.current}/>
+      <Card title="All Time Invested" value={invest.total}/>
     </div>
   );
 }

@@ -1,7 +1,15 @@
 @use "../../../../utils/global.scss" as *;
 
 .generalPage {
+    width: 100%;
+    height: 44rem;
+
     margin: 0;
     padding: 0;
-    background-color: rgb(255, 255, 255);
+
+    border-radius: 1rem;
+
+h2 {
+    color: $secondaryColor;
+}
 }

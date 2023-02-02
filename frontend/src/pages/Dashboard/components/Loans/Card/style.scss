@@ -1,0 +1,15 @@
+@use "../../../../../utils/global.scss" as *;
+
+.loanCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 12rem;
+    height: 10rem;
+
+    border-radius: 1rem;
+
+    background-color: rgb(170, 170, 170);
+}

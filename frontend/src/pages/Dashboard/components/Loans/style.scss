@@ -1,0 +1,9 @@
+@use "../../../../utils/global.scss" as *;
+
+.loanPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

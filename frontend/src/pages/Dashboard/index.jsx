@@ -3,19 +3,24 @@ import { useState, useEffect } from "react";
 import { getUser } from "../../api/userService";
 
 import DashNav from "./components/DashNav";
-import LoanCard from "../../components/LoanCard";
 import General from "./components/General";
+import Loans from "./components/Loans"
 
 import "./style.scss";
 
 function Dashboard() {
   const [dashPage, setDashPage] = useState("General");
+  const changePage = (newPage) => {
+    setDashPage(newPage);
+  }
+
   const [userData, setUserData] = useState({
     displayName: "...",
     invest: {
       total: "...",
       current: "..."
-    }
+    },
+    email: "..."
   });
 
   const { authUser } = useAuth();
@@ -29,7 +34,8 @@ function Dashboard() {
         setUserData((data) => ({
           ...data,
           displayName: res.data.displayName,
-          invest: res.data.invest
+          invest: res.data.invest,
+          email: res.data.email
         }));
       } catch (error) {
         console.log(error);
@@ -38,13 +44,25 @@ function Dashboard() {
     fetchData();
   }, [authUser]);
 
+  const [currentPage, setCurrentPage] = useState(<General userData={userData} />);
+  useEffect(() => {
+      switch (dashPage) {
+        case "General":
+          setCurrentPage(<General userData={userData} />);
+          break;
+        case "Loans":
+          setCurrentPage(<Loans />);
+          break;
+      }
+  }, [dashPage, userData])
+
   return (
     <div className="dashboardPage">
-      <DashNav />
+      <DashNav userData={userData} changePage={changePage} />
       <main>
         <h1>Dashboard</h1>
         <section className="middle">
-          <General userData={userData} />
+          {currentPage}
         </section>
       </main>
     </div>
