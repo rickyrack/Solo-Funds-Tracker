@@ -36,7 +36,6 @@ const getUser = asyncHandler(async (req, res) => {
   }
 
   const user = await User.findOne({ firebaseUID: req.user.uid });
-  console.log(user);
   res.status(200).json(user);
 });
 module.exports = {

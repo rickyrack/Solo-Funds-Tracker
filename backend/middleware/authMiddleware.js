@@ -3,8 +3,6 @@ const { firebase } = require("../services/firebase/firebase");
 
 const protect = asyncHandler(async (req, res, next) => {
   let authToken = req.headers.authorization;
-  console.log('auth header');
-  console.log(req.headers.authorization);
 
   if (authToken) {
     authToken = authToken.split(" ")[1];
@@ -21,7 +19,6 @@ const protect = asyncHandler(async (req, res, next) => {
     }
   } else {
     res.status(403).send("Unauthorized");
-    console.log("testing");
   }
 
   /*if (

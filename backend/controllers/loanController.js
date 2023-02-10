@@ -7,9 +7,12 @@ const Loan = require('../models/loan_model');
 // @route   GET /api/loans
 // @access  Private
 const getLoans = asyncHandler(async (req, res) => {
-    //const loans = await Loan.find({ loaner: req.user.id });
-    const loans = await Loan.find();
-
+    if(!req.user) {
+        throw new Error("Missing User(loanController)");
+    }
+    console.log('IN GET LOANS');
+    const loans = await Loan.find({ loaner: req.user.uid });
+    console.log(loans);
     res.status(200).json(loans);
 });
 

@@ -2,8 +2,20 @@
 
 .loanPage {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+
+.loanCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 2rem;
+
+    width: 87%;
+}
 }

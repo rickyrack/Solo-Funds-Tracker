@@ -3,7 +3,6 @@ import { auth } from '../firebase';
 
 const getAuthToken = async () => {
   try {
-    console.log(auth.currentUser);
     const idToken = await auth.currentUser.getIdToken(/* forceRefresh */ true)
       // Send token to your backend via HTTPS
       console.log(idToken);
